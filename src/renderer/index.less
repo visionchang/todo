@@ -1,0 +1,97 @@
+body {
+  background-color: #edfbf7;
+  // -webkit-app-region: drag;
+}
+img {
+  height: 20px;
+  vertical-align: -webkit-baseline-middle;
+  &[alt='pin'] {
+    transform: rotate(-45deg);
+    margin-left: 8px;
+  }
+  &[alt='opacity'] {
+    height: 18px;
+  }
+}
+.home {
+  &-drag {
+    min-height: 20px;
+    padding: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    justify-content: flex-end;
+    -webkit-app-region: drag;
+    margin-top: -10px;
+  }
+}
+.new-item {
+  border: 1px solid #ddd;
+  padding: 3px 7px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 100%;
+  --font-size: 14px;
+}
+.item {
+  &-list {
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  &-container {
+    position: relative;
+    height: 24px;
+    padding: 5px 0;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    &.done {
+      opacity: 0.4;
+      input {
+        text-decoration: line-through;
+      }
+    }
+    &:hover {
+      background-color: #e0f4ed;
+      img[alt='delete'] {
+        opacity: 0.4;
+      }
+    }
+    .adm-input {
+      --font-size: 14px;
+    }
+    span {
+      display: flex;
+      align-items: center;
+    }
+    img {
+      height: 15px;
+      &[alt='check'] {
+        margin-right: 5px;
+        height: 18px;
+        opacity: 0.4;
+      }
+      &[alt='drag'] {
+        opacity: 0;
+        height: 18px;
+        &:hover {
+          opacity: 1;
+        }
+        .dragging& {
+          opacity: 1;
+        }
+      }
+      &[alt='delete'] {
+        opacity: 0;
+      }
+    }
+  }
+  &-finish-time {
+    position: absolute;
+    font-size: 12px;
+    left: 40px;
+    bottom: -3px;
+  }
+}
